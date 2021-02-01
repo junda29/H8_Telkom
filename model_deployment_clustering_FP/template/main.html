@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H8 Model Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="number" name="total_vaccinations" placeholder="total_vaccinations	" required="required" />
+        <input type="number" name="people_vaccinated" placeholder="people_vaccinated" required="required" />
+        <input type="number" name="people_fully_vaccinated" placeholder="people_fully_vaccinated" required="required" />
+        <input type="number" name="daily_vaccinations_raw" placeholder="daily_vaccinations_raw" required="required" />
+        <input type="number" name="daily_vaccinations" placeholder="daily_vaccinations" required="required" />
+        <input type="number" name="total_vaccinations_per_hundred" placeholder="total_vaccinations_per_hundred" required="required" />
+        <input type="number" name="people_vaccinated_per_hundred" placeholder="people_vaccinated_per_hundred" required="required" />
+        <input type="number" name="people_fully_vaccinated_per_hundred" placeholder="people_fully_vaccinated_per_hundred" required="required" />
+        <input type="number" name="daily_vaccinations_per_million" placeholder="daily_vaccinations_per_million" required="required" />
+        
+        <p>{{ prediction_text }}</p>
+        <button type="submit">Predict</button>
+
+    </form>
+
+</body>
+</html>
