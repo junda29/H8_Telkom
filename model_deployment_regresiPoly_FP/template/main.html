@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H8 Model Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="number" name="UBPP Instruktur" placeholder="Masukkan nilai UBPP Instruktur" required="required" />
+        <input type="number" name="UBPP Sarana" placeholder="Masukkan nilai UBPP Sarana" required="required" />
+        <input type="number" name="UBPP Penyelenggaraan" placeholder="Masukkan nilai UBPP Penyelenggaraan" required="required" />
+        <input type="number" name="UBPP Materi" placeholder="Masukkan nilai UBPP Materi" required="required" />
+       
+        <p>{{ prediction_text }}</p>
+        <button type="submit">Predict</button>
+
+    </form>
+
+</body>
+</html>
